@@ -1,17 +1,24 @@
-import * as React from 'react'
-import { RouteComponentProps } from 'react-router-dom'
+import React from 'react'
+import { RouteComponentProps, Link } from 'react-router-dom'
 import { Button } from 'antd'
 
-export default class Login extends React.Component<RouteComponentProps<any>> {
+type State = {
+  name?: string
+}
+
+export default class Login extends React.Component<RouteComponentProps<any>, State> {
   constructor (props) {
     super(props)
-    console.log(this.props.location.state)
+    this.state = {
+      name: 'xgs',
+    }
   }
   render () {
     return (
       <div>
-        Login!
+        { this.state.name }, Login!
         <Button type="primary">click</Button>
+        <Link to="/">go to /</Link>
       </div>
     )
   }

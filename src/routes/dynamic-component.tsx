@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Loadable from 'react-loadable'
 import delayLoad from 'lib/delayLoadForLoadable'
 
@@ -14,7 +14,7 @@ function Loading (props: { error: boolean, pastDelay: boolean }) {
 const loaderLogin = () => import('pages/Login')
 
 export const Login = Loadable({
-  loader: () => delayLoad(3000)(loaderLogin),
+  loader: () => delayLoad(1000)(loaderLogin),
   loading: Loading,
 })
 

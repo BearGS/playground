@@ -85,8 +85,8 @@ module.exports = {
   },
 
   rules: {
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 1,
+    'no-console': process.env.NODE_ENV === 'production' ? 2 : 1,
     'dot-notation': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'space-before-function-paren': ['error', 'always'],

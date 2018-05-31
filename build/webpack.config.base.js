@@ -31,10 +31,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'eslint-loader',
-        exclude: /node_modules/,
+        test: /\.(js|jsx|mjs|ts|tsx)$/,
         enforce: 'pre',
+        loader: 'eslint-loader',
+        include: paths.appSrc,
       },
       // {
       //   test: /\.tsx?$/,
@@ -74,12 +74,6 @@ module.exports = {
       //   },
       //   enforce: 'pre',
       // },
-      {
-        test: /\.(js|jsx|mjs)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        include: paths.appSrc,
-      },
       {
         oneOf: [
           {

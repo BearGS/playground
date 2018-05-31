@@ -1,15 +1,16 @@
 const path = require('path')
 const paths = require('./paths')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const { css } = require('./webpack.loaders')
 const { Config } = require('webpack-config')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-const extractCSS = new ExtractTextPlugin({
-  filename: 'static/css/style.[contenthash:8].css',
-})
+// const extractCSS = new ExtractTextPlugin({
+//   filename: 'static/css/style.[contenthash:8].css',
+// })
 
 module.exports = new Config()
   .extend(path.resolve(paths.appBuild, 'webpack.config.base.js'))
@@ -45,11 +46,15 @@ module.exports = new Config()
     },
     module: {
       rules: [
-        ...css.getExtractCSSLoaders(extractCSS),
+        ...css.getExtractCSSLoaders(),
       ],
     },
     plugins: [
-      extractCSS,
+      // extractCSS,
+      new MiniCssExtractPlugin({
+        filename: '[name].[hash].css',
+        chunkFilename: '[id].[hash].css',
+      }),
       new HtmlWebpackPlugin({
         template: path.resolve(paths.appSrc, 'index.html'),
         filename: 'index.html',
