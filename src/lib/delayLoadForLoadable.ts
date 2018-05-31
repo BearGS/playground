@@ -1,4 +1,4 @@
-const delayLoad = delay => loader => new Promise(resolve => {
+const delayLoad = delay => (loader): Promise<any> => new Promise(resolve => {
   setTimeout(() => {
     resolve(loader())
   }, delay)

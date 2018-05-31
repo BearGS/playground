@@ -23,6 +23,9 @@ module.exports = {
       '@': paths.appSrc,
       components: paths.appComponents,
       styles: paths.appStyles,
+      pages: paths.appPages,
+      lib: paths.appLib,
+      services: paths.appServices,
     },
   },
   module: {

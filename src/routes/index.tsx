@@ -4,10 +4,8 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-
 import Page404 from 'pages/404'
 import { App, Login } from './dynamic-component'
-
 
 const routes = () => (
   <Router>

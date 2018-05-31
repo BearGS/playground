@@ -309,7 +309,7 @@ module.exports = {
     'import/resolver': {
       webpack: {
         config: './build/webpack.config.base.js',
-        extensions: ['.js', '.jsx', '.ts', 'tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
       },
       "eslint-import-resolver-typescript": true
     }
