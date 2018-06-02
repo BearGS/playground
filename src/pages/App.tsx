@@ -1,9 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { RouteComponentProps, Link } from 'react-router-dom'
 import { Button } from 'antd'
 
 type State = {
-  name?: string
+  name?: string;
+  age?: number;
 }
 
 export default class App extends React.Component<RouteComponentProps<any>, State> {
@@ -18,7 +19,7 @@ export default class App extends React.Component<RouteComponentProps<any>, State
     return (
       <div>
         { this.state.name } { this.state.age }, App!
-        <Button a="sdfs">点击</Button>
+        <Button>点击</Button>
         <Button type="primary">App</Button>
         <Link to="/login">go to login</Link>
       </div>

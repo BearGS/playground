@@ -31,28 +31,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|mjs|ts|tsx)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        include: paths.appSrc,
-      },
-      // {
-      //   test: /\.tsx?$/,
-      //   use: 'tslint-loader',
-      //   exclude: /node_modules/,
-      //   enforce: 'pre',
-      // },
-      {
         test: /\.js$/,
         loader: 'source-map-loader',
         include: /rxjs/,
         enforce: 'pre',
       },
       {
+        test: /\.(js|jsx|mjs)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        include: paths.appSrc,
+      },
+      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
-          transpileOnly: true,
+          transpileOnly: false,
           getCustomTransformers: () => ({
             before: [tsImportPluginFactory({
               libraryName: 'antd',
@@ -61,10 +55,16 @@ module.exports = {
             })],
           }),
           compilerOptions: {
-            module: 'es2015',
+            module: 'esNext',
           },
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(js|jsx|mjs)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        include: paths.appSrc,
       },
       // {
       //   test: /.tsx?$/,
