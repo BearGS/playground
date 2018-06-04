@@ -37,7 +37,7 @@ module.exports = {
         enforce: 'pre',
       },
       {
-        test: /\.(js|jsx|mjs)$/,
+        test: /\.(js|jsx|mjs|ts|tsx)$/,
         enforce: 'pre',
         loader: 'eslint-loader',
         include: paths.appSrc,
@@ -51,11 +51,11 @@ module.exports = {
             before: [tsImportPluginFactory({
               libraryName: 'antd',
               libraryDirectory: 'lib',
-              style: 'css',
+              style: true,
             })],
           }),
           compilerOptions: {
-            module: 'esNext',
+            module: 'ESNext',
           },
         },
         exclude: /node_modules/,
@@ -66,14 +66,6 @@ module.exports = {
         loader: 'eslint-loader',
         include: paths.appSrc,
       },
-      // {
-      //   test: /.tsx?$/,
-      //   loader: 'tslint-loader',
-      //   options: {
-      //     emitErrors: true,
-      //   },
-      //   enforce: 'pre',
-      // },
       {
         oneOf: [
           {

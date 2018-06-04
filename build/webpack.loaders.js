@@ -14,7 +14,12 @@ const css = {
     },
     {
       ext: 'less',
-      use: ['less-loader'],
+      use: [{
+        loader: 'less-loader',
+        options: {
+          javascriptEnabled: true
+        }
+      }],
     },
     {
       ext: 'styl',
@@ -41,7 +46,7 @@ const css = {
     ]
   },
 
-  getDevLoaders () {
+  getDevLoaders (sourceMap = true) {
     return css.loaders.reduce((result, loader) => {
       css.getModuleRegExp(loader.ext).forEach(mod => {
         result.push({
@@ -52,14 +57,14 @@ const css = {
               loader: 'typings-for-css-modules-loader',
               // loader: 'css-loader',
               query: Object.assign({}, css.loaderDefaults, {
-                sourceMap: true,
+                sourceMap,
                 modules: mod.modules
               }),
             },
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
+                sourceMap,
                 plugins: () => ([
                   require('autoprefixer'),
                   require('precss'),
