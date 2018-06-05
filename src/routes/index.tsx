@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Page404 from 'pages/404'
 import { App, Login } from './dynamic-component'
+// import DevTools from '../containers/DevTools'
 
 const routes = () => (
   <Router>
@@ -15,6 +16,7 @@ const routes = () => (
         <Route path="/login" component={Login} />
         <Route component={Page404} />
       </Switch>
+      {/* <DevTools /> */}
     </div>
   </Router>
 )

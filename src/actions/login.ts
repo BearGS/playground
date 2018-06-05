@@ -1,6 +1,6 @@
 import * as types from '../actionTypes/login'
 
-export const increment = text => ({ type: types.INCREMENT, text })
+export const increment = () => ({ type: types.INCREMENT })
 export const deleteTodo = id => ({ type: types.DELETE_TODO, id })
 export const editTodo = (id, text) => ({ type: types.EDIT_TODO, id, text })
 export const completeTodo = id => ({ type: types.COMPLETE_TODO, id })
