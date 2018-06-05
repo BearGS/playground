@@ -11,10 +11,10 @@ function Loading (props: { error: boolean, pastDelay: boolean }) {
   }
   return null
 }
-const loaderLogin = () => import('pages/Login')
+const loaderLogin = () => import('../containers/Login')
 
 export const Login = Loadable({
-  loader: () => delayLoad(1000)(loaderLogin),
+  loader: () => delayLoad()(loaderLogin),
   loading: Loading,
 })
 

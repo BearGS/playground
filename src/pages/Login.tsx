@@ -18,7 +18,7 @@ export default class Login extends React.Component<RouteComponentProps<any>, Sta
       <div>
         { this.state.name }, Login!
         {/* <Button type="primary">click</Button> */}
-        <Link to="/">go to /</Link>
+        <Link to="/" href="/">go to /</Link>
       </div>
     )
   }
