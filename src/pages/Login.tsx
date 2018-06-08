@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { RouteComponentProps, Link } from 'react-router-dom'
-// import { Button } from 'antd'
 
 type State = {
   name?: string;
 }
 
+/* eslint-disable react/no-multi-comp */
 export default class Login extends React.Component<RouteComponentProps<any>, State> {
   constructor (props) {
     super(props)
@@ -17,7 +17,6 @@ export default class Login extends React.Component<RouteComponentProps<any>, Sta
     return (
       <div>
         { this.state.name }, Login!
-        {/* <Button type="primary">click</Button> */}
         <Link to="/" href="/">go to /</Link>
       </div>
     )

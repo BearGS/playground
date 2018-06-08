@@ -9,8 +9,6 @@ if (module.hot) {
 }
 
 let store
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-undef */
 if (process.env.NODE_ENV === 'production') {
   store = configureProdStore()
 } else {

@@ -257,6 +257,7 @@ module.exports = {
       },
     ],
 
+    'space-infix-ops': 0,
     // https://github.com/gajus/eslint-plugin-flowtype
     'flowtype/define-flow-type': 'warn',
     'flowtype/require-valid-file-annotation': 'warn',
@@ -330,7 +331,8 @@ module.exports = {
       "no-undef": "off",
       "no-unused-expressions": "off",
       "no-use-before-define": "off",
-      "no-useless-constructor": "off"
+      "no-useless-constructor": "off",
+      "no-unused-vars": "off"
     }
   },
 

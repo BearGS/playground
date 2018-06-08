@@ -11,10 +11,13 @@ function Loading (props: { error: boolean, pastDelay: boolean }) {
   }
   return null
 }
+// const loaderLogin = () => import('../containers/TestWithHOCLogin')
 const loaderLogin = () => import('../containers/Login')
+// const loaderLogin = () => import('pages/Login')
+
 
 export const Login = Loadable({
-  loader: () => delayLoad()(loaderLogin),
+  loader: () => delayLoad(3000)(loaderLogin),
   loading: Loading,
 })
 
@@ -22,3 +25,4 @@ export const App = Loadable({
   loader: () => import('pages/App'),
   loading: Loading,
 })
+
